@@ -55,7 +55,7 @@ public class SybaseDB {
 	{
 		try {
 			SybDriver sybDriver = (SybDriver) Class.forName("com.sybase.jdbc3.jdbc.SybDriver").newInstance();
-			conn = DriverManager.getConnection("jdbc:sybase:Tds:" + host + ":" + port + "/" + dbname, props);
+			conn = DriverManager.getConnection("jdbc:sybase:Tds:" + host + ":" + port + "?ServiceName=" + dbname, props);
 			return true;
 
 		} catch (Exception ex) {
